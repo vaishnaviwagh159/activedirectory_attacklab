@@ -1,0 +1,35 @@
+{
+  "domain": "lab.example.local",
+  "service_accounts": [
+    {
+      "name": "svc_legacy_web",
+      "spns": [
+        "HTTP/web01.lab.example.local"
+      ],
+      "password_age_days": 430,
+      "supported_encryption": [
+        "RC4"
+      ]
+    },
+    {
+      "name": "svc_reports_gmsa_candidate",
+      "spns": [
+        "MSSQLSvc/sql01.lab.example.local:1433"
+      ],
+      "password_age_days": 30,
+      "supported_encryption": [
+        "AES128",
+        "AES256"
+      ]
+    }
+  ],
+  "gpo_settings": {
+    "min_password_length": 14,
+    "lockout_threshold": 5,
+    "lm_hash_storage_disabled": true,
+    "smbv1_disabled": true,
+    "windows_firewall_enabled": true,
+    "powershell_script_block_logging": false,
+    "ldap_signing_required": true
+  }
+}
